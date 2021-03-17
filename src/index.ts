@@ -1,7 +1,10 @@
 import * as express from 'express';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ?? 80;
 const root = `${process.cwd()}/dist`;
 
 app.use(express.static(root));
